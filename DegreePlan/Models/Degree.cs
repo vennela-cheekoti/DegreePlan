@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Degreeplan.Models
+namespace DegreePlan.Models
 {
     public class Degree
     {
