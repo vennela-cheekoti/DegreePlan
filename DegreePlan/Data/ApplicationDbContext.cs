@@ -12,5 +12,7 @@ namespace DegreePlan.Data
             : base(options)
         {
         }
+        public DBSet<DegreePlan> Degrees { get; set; }
+        public DBSet<Requirement>
     }
 }
