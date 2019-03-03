@@ -178,19 +178,20 @@ namespace DegreePlan.Data
             {
                 var Slots = new Slot[]
                 {
-                    new Slot{ SlotID = 1, DegreePlan = 7255,  Term = 1, CreditID = 356},
-                    new Slot { SlotID = 2, DegreePlan = 7255, Term = 1,  CreditID = 542 },
-                    new Slot { SlotID = 3, DegreePlan = 7255, Term = 1,  CreditID = 563 },
-                    new Slot { SlotID = 4, DegreePlan = 7255, Term = 1,  CreditID = 460 },
-                    new Slot { SlotID = 5, DegreePlan = 7255, Term = 2,  CreditID = 560 },
-                    new Slot { SlotID = 6, DegreePlan = 7255, Term = 2,  CreditID = 664 },
-                    new Slot { SlotID = 7, DegreePlan = 7255, Term = 2,  CreditID = 64 },
-                    new Slot { SlotID = 8, DegreePlan = 7255, Term = 3,  CreditID = 618 },
-                    new Slot { SlotID = 9, DegreePlan = 7255, Term = 3,  CreditID = 691 },
-                    new Slot { SlotID = 10, DegreePlan = 7255, Term = 4,  CreditID = 10 },
-                    new Slot { SlotID = 11, DegreePlan = 7255, Term = 4, CreditID = 555 },
-                    new Slot { SlotID = 12, DegreePlan = 7255, Term = 5,  CreditID = 20 },
-                    new Slot { SlotID = 13, DegreePlan = 7255, Term = 5, CreditID = 692 },
+                    new Slot{ SlotID = 1, DegreePlan = 7255,  Term = 1, CreditID = 356,Status="C"},
+                    new Slot{ SlotID = 2, DegreePlan = 7255,  Term = 1, CreditID = 542,Status="C"},
+                    new Slot{ SlotID = 3, DegreePlan = 7255,  Term = 1, CreditID = 563,Status="C"},
+                    new Slot{ SlotID = 4, DegreePlan = 7255,  Term = 1, CreditID = 460,Status="C"},
+                    new Slot{ SlotID = 5, DegreePlan = 7255,  Term = 2, CreditID = 560,Status="A"},
+                    new Slot{ SlotID = 6, DegreePlan = 7255,  Term = 2, CreditID = 664,Status="A"},
+                    new Slot{ SlotID = 7, DegreePlan = 7255,  Term = 2, CreditID = 64,Status="A"},
+                    new Slot{ SlotID = 8, DegreePlan = 7255,  Term = 3, CreditID = 618,Status="P"},
+                    new Slot{ SlotID = 9, DegreePlan = 7255,  Term = 3, CreditID = 691,Status="P"},
+                    new Slot{ SlotID = 10, DegreePlan = 7255,  Term = 4, CreditID = 10,Status="P"},
+                    new Slot{ SlotID = 11, DegreePlan = 7255,  Term = 4, CreditID = 555,Status="P"},
+                    new Slot{ SlotID = 12, DegreePlan = 7255,  Term = 5, CreditID = 20,Status="P"},
+                    new Slot{ SlotID = 13, DegreePlan = 7255,  Term = 5, CreditID = 692,Status="P"},
+
 
                 };
                 Console.WriteLine($"Inserted {Slots.Length} new degrees.");
