@@ -125,7 +125,51 @@ namespace DegreePlan.Data
                 }
                 context.SaveChanges();
             }
+             if (context.Student.Any())
+            {
+                Console.WriteLine("Students already exist.");
+            }
+            else
+            {
+                var students = new Student[]
+                {
+                    new Student { StudentID=533619, FamilyName=Cheekoti, GivenName=Vennela, SID=S533619, CatPawsID=919568817},
+                    new Student { StudentID=533907, FamilyName=Gade, GivenName=Susritha, SID=S533907, CatPawsID=919570703},
+                    new Student { StudentID=533623, FamilyName=Gone, GivenName=Sathwika, SID=S533623, CatPawsID=919568816},
 
+
+                };
+                Console.WriteLine($"Inserted {students.Length} new students.");
+                foreach (DegreePlan d in students)
+                {
+                    context.Student.Add(d);
+                }
+                context.SaveChanges();
+            }
+             if (context.DegreePlan.Any())
+            {
+                Console.WriteLine("DegreePlans already exist.");
+            }
+            else
+            {
+                var degreeplans = new Student[]
+                {
+                        new DegreePlan {DegreePlanID=7251, StudentID=533619, DegreePlanAbv=Super Fast, DegreePlanName=As Fast as I can, DegreeID=1},
+                        new DegreePlan {DegreePlanID=7258, StudentID=533619, DegreePlanAbv=slow and Easy, DegreePlanName=As slow as I can, DegreeID=1},
+                        new DegreePlan {DegreePlanID=7253, StudentID=533623, DegreePlanAbv=Super Fast, DegreePlanName=As Fast as I can, DegreeID=1},
+                        new DegreePlan {DegreePlanID=7255, StudentID=533907, DegreePlanAbv=Slow and Easy, DegreePlanName=As slow as I can, DegreeID=1},
+                        new DegreePlan {DegreePlanID=7257, StudentID=533907, DegreePlanAbv=Super Fast, DegreePlanName=As Fast as I can, DegreeID=1},
+                        new DegreePlan {DegreePlanID=7254, StudentID=533623, DegreePlanAbv=Slow and Easy, DegreePlanName=As slow as I can, DegreeID=1},
+
+
+                };
+                Console.WriteLine($"Inserted {degreeplans.Length} new students.");
+                foreach (DegreePlan d in degreeplans)
+                {
+                    context.DegreePlan.Add(d);
+                }
+                context.SaveChanges();
+            }
         }
 
     }

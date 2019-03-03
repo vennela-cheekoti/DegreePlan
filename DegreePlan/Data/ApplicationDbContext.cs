@@ -15,7 +15,7 @@ namespace DegreePlan.Data
         public DBSet<Degree> Degrees { get; set; }
         public DBSet<Credit> Credits {get; set;}
         public DBSet<DegreeCredit> DegreeCredits {get; set;}
-        public DBSet<Degreeplan> Degreeplans {get; set;}
+        public DBSet<DegreePlan> DegreePlans {get; set;}
         public DBSet<Student> Students {get; set;}
         public DBSet<Slot> Slots {get; set;}
         public DBSet<StudentTerm> StudentTerms {get; set;}
@@ -24,7 +24,7 @@ namespace DegreePlan.Data
             modelBuilder.Entity<Degree>().ToTable("Degree");
             modelBuilder.Entity<Credit>().ToTable("Credit");
             modelBuilder.Entity<DegreeCredit>().ToTable("DegreeCredit");
-            modelBuilder.Entity<Degreeplan>().ToTable("Degreeplan");
+            modelBuilder.Entity<DegreePlan>().ToTable("Degreeplan");
             modelBuilder.Entity<Student>().ToTable("Student");
             modelBuilder.Entity<Slot>().ToTable("Slot");
             modelBuilder.Entity<StudentTerm>().ToTable("StudentTerm");
