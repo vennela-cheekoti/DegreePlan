@@ -109,7 +109,7 @@ namespace DegreePlan.Data
                 Console.WriteLine($"Inserted {students.Length} new students.");
                 foreach (DegreePlan d in students)
                 {
-                    context.Student.Add(d);
+                    context.Students.Add(d);
                 }
                 context.SaveChanges();
             }
@@ -133,10 +133,74 @@ namespace DegreePlan.Data
                 Console.WriteLine($"Inserted {degreeplans.Length} new students.");
                 foreach (DegreePlan d in degreeplans)
                 {
-                    context.DegreePlan.Add(d);
+                    context.DegreePlans.Add(d);
                 }
                 context.SaveChanges();
             }
+            if (context.StudentTerm.Any())
+            {
+                Console.WriteLine("StudentTerm already exist.");
+            }
+            else
+            {
+                var Studentterms = new StudentTerm[]
+                {
+                    new StudentTerm{ StudenTermID = 1 , StudentID = 533619 , Term = 1 , TermAbv = "S18 ", TermName = "Spring 2018" , DegreeplanID = 7258},
+                    new StudentTerm { StudenTermID = 2, StudentID = 533619, Term = 2, TermAbv = "Su18", TermName = "Summer 2018", DegreeplanID = 7258 },
+                    new StudentTerm { StudenTermID = 3, StudentID = 533619, Term = 3, TermAbv = "F18", TermName = "Fall 2018", DegreeplanID = 7258 },
+                    new StudentTerm { StudenTermID = 4, StudentID = 533619, Term = 4, TermAbv = "S19", TermName = "Spring 2019", DegreeplanID = 7258 },
+                    new StudentTerm { StudenTermID = 5, StudentID = 533619, Term = 5, TermAbv = "Su19", TermName = "Summer 2019", DegreeplanID = 7258 },
+                    new StudentTerm { StudenTermID = 6, StudentID = 533619, Term = 6, TermAbv = "F19", TermName = "Fall 2019", DegreeplanID = 7258 },
+                    new StudentTerm { StudenTermID = 7, StudentID = 533623, Term = 1, TermAbv = "F19", TermName = "Fall 2019", DegreeplanID = 7255 },
+                    new StudentTerm { StudenTermID = 8, StudentID = 533623, Term = 2, TermAbv = "S20", TermName = "Spring 2020", DegreeplanID = 7255 },
+                    new StudentTerm { StudenTermID = 9, StudentID = 533623, Term = 3, TermAbv = "Su20", TermName = "Summer 2020", DegreeplanID = 7255 },
+                    new StudentTerm { StudenTermID = 10,StudentID = 533623, Term = 4, TermAbv = "F20", TermName = "Fall 2020", DegreeplanID = 7255 },
+                    new StudentTerm { StudenTermID = 11, StudentID = 533623, Term = 5, TermAbv = "S21", TermName = "Spring 2021", DegreeplanID = 7255 },
+                    new StudentTerm { StudenTermID = 12, StudentID = 533907, Term = 1, TermAbv = "F18", TermName = "Fall2018", DegreeplanID = 7254 },
+                    new StudentTerm { StudenTermID = 13, StudentID = 533907, Term = 2, TermAbv = "S19", TermName = "Spring2019", DegreeplanID = 7254 },
+                    new StudentTerm { StudenTermID = 14, StudentID = 533907, Term = 3, TermAbv = "SU19", TermName = "Summer2019", DegreeplanID = 7254 },
+                    new StudentTerm { StudenTermID = 15, StudentID = 533907, Term = 4, TermAbv = "F20", TermName = "Fall2019", DegreeplanID = 7254 },
+                    new StudentTerm { StudenTermID = 16, StudentID = 533907, Term = 5, TermAbv = "S20", TermName = "Spring2020", DegreeplanID = 7254 },
+
+                };
+                Console.WriteLine($"Inserted {Studentterms.Length} new degrees.");
+                foreach (StudentTerm d in Studentterms)
+                {
+                    context.StudentTerms.Add(d);
+                }
+                context.SaveChanges();
+            }
+            if (context.Slot.Any())
+            {
+                Console.WriteLine("Slot already exist.");
+            }
+            else
+            {
+                var Slots = new Slot[]
+                {
+                    new Slot{ SlotID = 1, DegreePlan = 7255,  Term = 1, CreditID = 356},
+                    new Slot { SlotID = 2, DegreePlan = 7255, Term = 1,  CreditID = 542 },
+                    new Slot { SlotID = 3, DegreePlan = 7255, Term = 1,  CreditID = 563 },
+                    new Slot { SlotID = 4, DegreePlan = 7255, Term = 1,  CreditID = 460 },
+                    new Slot { SlotID = 5, DegreePlan = 7255, Term = 2,  CreditID = 560 },
+                    new Slot { SlotID = 6, DegreePlan = 7255, Term = 2,  CreditID = 664 },
+                    new Slot { SlotID = 7, DegreePlan = 7255, Term = 2,  CreditID = 64 },
+                    new Slot { SlotID = 8, DegreePlan = 7255, Term = 3,  CreditID = 618 },
+                    new Slot { SlotID = 9, DegreePlan = 7255, Term = 3,  CreditID = 691 },
+                    new Slot { SlotID = 10, DegreePlan = 7255, Term = 4,  CreditID = 10 },
+                    new Slot { SlotID = 11, DegreePlan = 7255, Term = 4, CreditID = 555 },
+                    new Slot { SlotID = 12, DegreePlan = 7255, Term = 5,  CreditID = 20 },
+                    new Slot { SlotID = 13, DegreePlan = 7255, Term = 5, CreditID = 692 },
+
+                };
+                Console.WriteLine($"Inserted {Slots.Length} new degrees.");
+                foreach (Slot d in Slots)
+                {
+                    context.Slots.Add(d);
+                }
+                context.SaveChanges();
+            }
+
         }
 
     }
