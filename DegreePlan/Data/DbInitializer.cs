@@ -55,7 +55,7 @@ namespace DegreePlan.Data
 
                 };
                 Console.WriteLine($"Inserted {credits.Length} new credits.");
-                foreach (DegreePlan d in credits)
+                foreach (Credit d in credits)
                 {
                     context.Credit.Add(d);
                 }
