@@ -92,7 +92,7 @@ namespace DegreePlan.Data
                 }
                 context.SaveChanges();
             }
-             if (context.Student.Any())
+             if (context.Students.Any())
             {
                 Console.WriteLine("Students already exist.");
             }
@@ -113,7 +113,7 @@ namespace DegreePlan.Data
                 }
                 context.SaveChanges();
             }
-             if (context.DegreePlan.Any())
+             if (context.DegreePlans.Any())
             {
                 Console.WriteLine("DegreePlans already exist.");
             }
@@ -137,7 +137,7 @@ namespace DegreePlan.Data
                 }
                 context.SaveChanges();
             }
-            if (context.StudentTerm.Any())
+            if (context.StudentTerms.Any())
             {
                 Console.WriteLine("StudentTerm already exist.");
             }
@@ -170,7 +170,7 @@ namespace DegreePlan.Data
                 }
                 context.SaveChanges();
             }
-            if (context.Slot.Any())
+            if (context.Slots.Any())
             {
                 Console.WriteLine("Slot already exist.");
             }
