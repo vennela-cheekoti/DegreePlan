@@ -8,7 +8,7 @@ namespace DegreePlan.Models
         public int ID { get; set; }
         public string FamilyName { get; set; }
         public string GivenName { get; set; }
-        public string SID { get; set; }
-        public string CatPawsID { get; set; }
+        public int SID { get; set; }
+        public int CatPawsID { get; set; }
     }
 }
