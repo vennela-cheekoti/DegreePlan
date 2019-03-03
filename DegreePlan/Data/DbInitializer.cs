@@ -25,7 +25,7 @@ namespace DegreePlan.Data
                      new Degree{DegreeID = 4 , DegreeAbv = "ACS" , DegreeName = "MS ACS"},
                 };
                 Console.WriteLine($"Inserted {degrees.Length} new degrees.");
-                foreach (DegreePlan d in degrees)
+                foreach (Degree d in degrees)
                 {
                     context.Degrees.Add(d);
                 }
@@ -57,7 +57,7 @@ namespace DegreePlan.Data
                 Console.WriteLine($"Inserted {credits.Length} new credits.");
                 foreach (DegreePlan d in credits)
                 {
-                    context.Credits.Add(d);
+                    context.Credit.Add(d);
                 }
                 context.SaveChanges();
             }
@@ -86,7 +86,7 @@ namespace DegreePlan.Data
                 };
 
                 Console.WriteLine($"Inserted {degreecredits.Length} new degree credits.");
-                foreach (DegreePlan d in degreecredits)
+                foreach (DegreeCredit d in degreecredits)
                 {
                     context.DegreeCredits.Add(d);
                 }
@@ -107,7 +107,7 @@ namespace DegreePlan.Data
 
                 };
                 Console.WriteLine($"Inserted {students.Length} new students.");
-                foreach (DegreePlan d in students)
+                foreach (Student d in students)
                 {
                     context.Students.Add(d);
                 }
@@ -119,7 +119,7 @@ namespace DegreePlan.Data
             }
             else
             {
-                var degreeplans = new Student[]
+                var degreeplans = new DegreePlan[]
                 {
                         new DegreePlan {DegreePlanID=7251, StudentID=533619, DegreePlanAbv="Super Fast", DegreePlanName="As Fast as I can", DegreeID=1},
                         new DegreePlan {DegreePlanID=7258, StudentID=533619, DegreePlanAbv="slow and Easy", DegreePlanName="As slow as I can", DegreeID=1},
