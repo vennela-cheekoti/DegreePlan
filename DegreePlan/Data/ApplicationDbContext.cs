@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using DegreePlan.Models;
 
 namespace DegreePlan.Data
 {
@@ -12,19 +13,19 @@ namespace DegreePlan.Data
             : base(options)
         {
         }
-        public DBSet<Degree> Degrees { get; set; }
-        public DBSet<Credit> Credits {get; set;}
-        public DBSet<DegreeCredit> DegreeCredits {get; set;}
-        public DBSet<DegreePlan> DegreePlans {get; set;}
-        public DBSet<Student> Students {get; set;}
-        public DBSet<Slot> Slots {get; set;}
-        public DBSet<StudentTerm> StudentTerms {get; set;}
+        public DbSet<Degree> Degrees { get; set; }
+        public DbSet<Credit> Credits {get; set;}
+        public DbSet<DegreeCredit> DegreeCredits {get; set;}
+        public DbSet<Degreeplan> DegreePlans {get; set;}
+        public DbSet<Student> Students {get; set;}
+        public DbSet<Slot> Slots {get; set;}
+        public DbSet<StudentTerm> StudentTerms {get; set;}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Degree>().ToTable("Degree");
             modelBuilder.Entity<Credit>().ToTable("Credit");
             modelBuilder.Entity<DegreeCredit>().ToTable("DegreeCredit");
-            modelBuilder.Entity<DegreePlan>().ToTable("Degreeplan");
+            modelBuilder.Entity<Degreeplan>().ToTable("Degreeplan");
             modelBuilder.Entity<Student>().ToTable("Student");
             modelBuilder.Entity<Slot>().ToTable("Slot");
             modelBuilder.Entity<StudentTerm>().ToTable("StudentTerm");

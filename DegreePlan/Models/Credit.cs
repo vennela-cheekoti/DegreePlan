@@ -5,7 +5,7 @@ namespace DegreePlan.Models
 {
     public class Credit
     {
-        public int ID { get; set; }
+        public int CreditID { get; set; }
         public string CreditAbv { get; set; }
         public string CreditName { get; set; }
         public int IsSummer { get; set; }

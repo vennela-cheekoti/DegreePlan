@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace DegreePlan.Models
 {
-    public class Student
+    public class Slot
     {
-        public int ID { get; set; }
+        public int SlotID { get; set; }
         public string Status { get; set; }
-        
+        public int DegreePlan { get; set; }
+        public int Term { get; set; }
+        public int CreditID { get; set; }
 
-        public ICollection<DegreePlan> DegreePlan { get; set; }
-        public ICollection<Degree> Term { get; set; }
-        public ICollection<DegreeCredit> CreditID { get; set; }
+       
 
     }
 }

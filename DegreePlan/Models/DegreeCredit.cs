@@ -10,11 +10,13 @@ using System;
 
                     {
 
-                        public int ID { get; set; }
+                        public int DegreeCreditID { get; set; }
+                        public int DegreeID { get; set; }
+                        public int CreditID { get; set; }
 
-                        public ICollection<DegreeID> DegreeID { get; set; }
 
-                        public ICollection<CreditID> CreditID { get; set; }
+
+        
 
                     }
 
