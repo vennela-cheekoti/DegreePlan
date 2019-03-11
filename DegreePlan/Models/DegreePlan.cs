@@ -10,16 +10,16 @@ using System;
 
                     {
 
-                                public int DegreeplanID { get; set; }
+                                public int DegreeplanId { get; set; }
 
-                                 public int StudentID { get; set; }
+                                 public int StudentId { get; set; }
        
 
                                 public String DegreePlanAbv { get; set; }
 
                                 public String DegreePlanName{ get; set; }
 
-                                public int DegreeID { get; set; }
+                                public int DegreeId { get; set; }
     
 
                     }

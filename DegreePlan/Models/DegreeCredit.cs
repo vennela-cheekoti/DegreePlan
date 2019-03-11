@@ -10,9 +10,9 @@ using System;
 
                     {
 
-                        public int DegreeCreditID { get; set; }
-                        public int DegreeID { get; set; }
-                        public int CreditID { get; set; }
+                        public int DegreeCreditId { get; set; }
+                        public int DegreeId { get; set; }
+                        public int CreditId { get; set; }
 
 
 

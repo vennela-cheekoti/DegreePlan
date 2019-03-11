@@ -5,11 +5,11 @@ namespace DegreePlan.Models
 {
     public class Slot
     {
-        public int SlotID { get; set; }
+        public int SlotId { get; set; }
         public string Status { get; set; }
         public int DegreePlan { get; set; }
         public int Term { get; set; }
-        public int CreditID { get; set; }
+        public int CreditId { get; set; }
 
        
 

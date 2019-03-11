@@ -22,6 +22,7 @@ namespace DegreePlan.Data
         public DbSet<StudentTerm> StudentTerms {get; set;}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Degree>().ToTable("Degree");
             modelBuilder.Entity<Credit>().ToTable("Credit");
             modelBuilder.Entity<DegreeCredit>().ToTable("DegreeCredit");

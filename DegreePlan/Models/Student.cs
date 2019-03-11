@@ -5,7 +5,7 @@ namespace DegreePlan.Models
 {
     public class Student
     {
-        public int StudentID { get; set; }
+        public int StudentId { get; set; }
         public string FamilyName { get; set; }
         public string GivenName { get; set; }
         public String SID { get; set; }
