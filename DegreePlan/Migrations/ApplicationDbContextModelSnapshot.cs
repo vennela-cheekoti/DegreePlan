@@ -21,9 +21,7 @@ namespace DegreePlan.Migrations
 
             modelBuilder.Entity("DegreePlan.Models.Credit", b =>
                 {
-                    b.Property<int>("CreditId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("CreditId");
 
                     b.Property<string>("CreditAbv");
 
@@ -42,9 +40,7 @@ namespace DegreePlan.Migrations
 
             modelBuilder.Entity("DegreePlan.Models.Degree", b =>
                 {
-                    b.Property<int>("DegreeId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("DegreeId");
 
                     b.Property<string>("DegreeAbv");
 
@@ -59,9 +55,7 @@ namespace DegreePlan.Migrations
 
             modelBuilder.Entity("DegreePlan.Models.DegreeCredit", b =>
                 {
-                    b.Property<int>("DegreeCreditId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("DegreeCreditId");
 
                     b.Property<int>("CreditId");
 
@@ -74,9 +68,7 @@ namespace DegreePlan.Migrations
 
             modelBuilder.Entity("DegreePlan.Models.Degreeplan", b =>
                 {
-                    b.Property<int>("DegreeplanId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("DegreeplanId");
 
                     b.Property<int>("DegreeId");
 
@@ -93,9 +85,7 @@ namespace DegreePlan.Migrations
 
             modelBuilder.Entity("DegreePlan.Models.Slot", b =>
                 {
-                    b.Property<int>("SlotId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("SlotId");
 
                     b.Property<int>("CreditId");
 
@@ -112,9 +102,7 @@ namespace DegreePlan.Migrations
 
             modelBuilder.Entity("DegreePlan.Models.Student", b =>
                 {
-                    b.Property<int>("StudentId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("StudentId");
 
                     b.Property<int>("CatPawsID");
 
@@ -131,9 +119,7 @@ namespace DegreePlan.Migrations
 
             modelBuilder.Entity("DegreePlan.Models.StudentTerm", b =>
                 {
-                    b.Property<int>("StudentTermId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<int>("StudentTermId");
 
                     b.Property<int>("DegreeplanId");
 

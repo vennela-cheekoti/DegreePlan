@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DegreePlan.Migrations
 {
-    public partial class initDB : Migration
+    public partial class initDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -51,8 +51,7 @@ namespace DegreePlan.Migrations
                 name: "Credit",
                 columns: table => new
                 {
-                    CreditId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CreditId = table.Column<int>(nullable: false),
                     CreditAbv = table.Column<string>(nullable: true),
                     CreditName = table.Column<string>(nullable: true),
                     IsSummer = table.Column<int>(nullable: false),
@@ -68,8 +67,7 @@ namespace DegreePlan.Migrations
                 name: "Degree",
                 columns: table => new
                 {
-                    DegreeId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DegreeId = table.Column<int>(nullable: false),
                     DegreeAbv = table.Column<string>(nullable: true),
                     DegreeName = table.Column<string>(nullable: true),
                     NumberOfTerms = table.Column<int>(nullable: false)
@@ -83,8 +81,7 @@ namespace DegreePlan.Migrations
                 name: "DegreeCredit",
                 columns: table => new
                 {
-                    DegreeCreditId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DegreeCreditId = table.Column<int>(nullable: false),
                     DegreeId = table.Column<int>(nullable: false),
                     CreditId = table.Column<int>(nullable: false)
                 },
@@ -97,8 +94,7 @@ namespace DegreePlan.Migrations
                 name: "Degreeplan",
                 columns: table => new
                 {
-                    DegreeplanId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DegreeplanId = table.Column<int>(nullable: false),
                     StudentId = table.Column<int>(nullable: false),
                     DegreePlanAbv = table.Column<string>(nullable: true),
                     DegreePlanName = table.Column<string>(nullable: true),
@@ -113,8 +109,7 @@ namespace DegreePlan.Migrations
                 name: "Slot",
                 columns: table => new
                 {
-                    SlotId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    SlotId = table.Column<int>(nullable: false),
                     Status = table.Column<string>(nullable: true),
                     DegreePlan = table.Column<int>(nullable: false),
                     Term = table.Column<int>(nullable: false),
@@ -129,8 +124,7 @@ namespace DegreePlan.Migrations
                 name: "Student",
                 columns: table => new
                 {
-                    StudentId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    StudentId = table.Column<int>(nullable: false),
                     FamilyName = table.Column<string>(nullable: true),
                     GivenName = table.Column<string>(nullable: true),
                     SID = table.Column<string>(nullable: true),
@@ -145,8 +139,7 @@ namespace DegreePlan.Migrations
                 name: "StudentTerm",
                 columns: table => new
                 {
-                    StudentTermId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    StudentTermId = table.Column<int>(nullable: false),
                     Term = table.Column<int>(nullable: false),
                     TermAbv = table.Column<string>(nullable: true),
                     TermName = table.Column<string>(nullable: true),

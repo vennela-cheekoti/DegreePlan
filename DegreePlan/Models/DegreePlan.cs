@@ -1,8 +1,9 @@
 using System;
 
                 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
-                namespace DegreePlan.Models
+namespace DegreePlan.Models
 
                 {
 
@@ -10,7 +11,8 @@ using System;
 
                     {
 
-                                public int DegreeplanId { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int DegreeplanId { get; set; }
 
                                  public int StudentId { get; set; }
        
