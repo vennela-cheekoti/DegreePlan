@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DegreePlan.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190311143348_[initDb]")]
-    partial class initDb
+    [Migration("20190311152506_initDB")]
+    partial class initDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
