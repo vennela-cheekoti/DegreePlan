@@ -146,22 +146,22 @@ namespace DegreePlan.Data
             {
                 var Studentterms = new StudentTerm[]
                 {
-                    new StudentTerm{ StudentTermId = 1 , StudentId = 533619 , Term = 1 , TermAbv = "S18 ", TermName = "Spring 2018" , DegreeplanId = 7258},
-                    new StudentTerm { StudentTermId = 2, StudentId = 533619, Term = 2, TermAbv = "Su18", TermName = "Summer 2018", DegreeplanId = 7258 },
-                    new StudentTerm { StudentTermId = 3, StudentId = 533619, Term = 3, TermAbv = "F18", TermName = "Fall 2018", DegreeplanId = 7258 },
-                    new StudentTerm { StudentTermId = 4, StudentId = 533619, Term = 4, TermAbv = "S19", TermName = "Spring 2019", DegreeplanId = 7258 },
-                    new StudentTerm { StudentTermId = 5, StudentId = 533619, Term = 5, TermAbv = "Su19", TermName = "Summer 2019", DegreeplanId = 7258 },
-                    new StudentTerm { StudentTermId = 6, StudentId = 533619, Term = 6, TermAbv = "F19", TermName = "Fall 2019", DegreeplanId = 7258 },
-                    new StudentTerm { StudentTermId = 7, StudentId = 533623, Term = 1, TermAbv = "F19", TermName = "Fall 2019", DegreeplanId = 7255 },
-                    new StudentTerm { StudentTermId = 8, StudentId = 533623, Term = 2, TermAbv = "S20", TermName = "Spring 2020", DegreeplanId = 7255 },
-                    new StudentTerm { StudentTermId = 9, StudentId = 533623, Term = 3, TermAbv = "Su20", TermName = "Summer 2020", DegreeplanId = 7255 },
-                    new StudentTerm { StudentTermId = 10,StudentId = 533623, Term = 4, TermAbv = "F20", TermName = "Fall 2020", DegreeplanId = 7255 },
-                    new StudentTerm { StudentTermId = 11, StudentId = 533623, Term = 5, TermAbv = "S21", TermName = "Spring 2021", DegreeplanId = 7255 },
-                    new StudentTerm { StudentTermId = 12, StudentId = 533907, Term = 1, TermAbv = "F18", TermName = "Fall2018", DegreeplanId = 7254 },
-                    new StudentTerm { StudentTermId = 13, StudentId = 533907, Term = 2, TermAbv = "S19", TermName = "Spring2019", DegreeplanId = 7254 },
-                    new StudentTerm { StudentTermId = 14, StudentId = 533907, Term = 3, TermAbv = "SU19", TermName = "Summer2019", DegreeplanId = 7254 },
-                    new StudentTerm { StudentTermId = 15, StudentId = 533907, Term = 4, TermAbv = "F20", TermName = "Fall2019", DegreeplanId = 7254 },
-                    new StudentTerm { StudentTermId = 16, StudentId = 533907, Term = 5, TermAbv = "S20", TermName = "Spring2020", DegreeplanId = 7254 },
+                    new StudentTerm{ StudentTermId = 1 ,  Term = 1 , TermAbv = "S18 ", TermName = "Spring 2018" , DegreeplanId = 7258},
+                    new StudentTerm { StudentTermId = 2,  Term = 2, TermAbv = "Su18", TermName = "Summer 2018", DegreeplanId = 7258 },
+                    new StudentTerm { StudentTermId = 3,  Term = 3, TermAbv = "F18", TermName = "Fall 2018", DegreeplanId = 7258 },
+                    new StudentTerm { StudentTermId = 4,  Term = 4, TermAbv = "S19", TermName = "Spring 2019", DegreeplanId = 7258 },
+                    new StudentTerm { StudentTermId = 5,  Term = 5, TermAbv = "Su19", TermName = "Summer 2019", DegreeplanId = 7258 },
+                    new StudentTerm { StudentTermId = 6,  Term = 6, TermAbv = "F19", TermName = "Fall 2019", DegreeplanId = 7258 },
+                    new StudentTerm { StudentTermId = 7,  Term = 1, TermAbv = "F19", TermName = "Fall 2019", DegreeplanId = 7255 },
+                    new StudentTerm { StudentTermId = 8,  Term = 2, TermAbv = "S20", TermName = "Spring 2020", DegreeplanId = 7255 },
+                    new StudentTerm { StudentTermId = 9,  Term = 3, TermAbv = "Su20", TermName = "Summer 2020", DegreeplanId = 7255 },
+                    new StudentTerm { StudentTermId = 10, Term = 4, TermAbv = "F20", TermName = "Fall 2020", DegreeplanId = 7255 },
+                    new StudentTerm { StudentTermId = 11, Term = 5, TermAbv = "S21", TermName = "Spring 2021", DegreeplanId = 7255 },
+                    new StudentTerm { StudentTermId = 12,  Term = 1, TermAbv = "F18", TermName = "Fall2018", DegreeplanId = 7254 },
+                    new StudentTerm { StudentTermId = 13,  Term = 2, TermAbv = "S19", TermName = "Spring2019", DegreeplanId = 7254 },
+                    new StudentTerm { StudentTermId = 14,  Term = 3, TermAbv = "SU19", TermName = "Summer2019", DegreeplanId = 7254 },
+                    new StudentTerm { StudentTermId = 15,  Term = 4, TermAbv = "F20", TermName = "Fall2019", DegreeplanId = 7254 },
+                    new StudentTerm { StudentTermId = 16, Term = 5, TermAbv = "S20", TermName = "Spring2020", DegreeplanId = 7254 },
 
                 };
                 Console.WriteLine($"Inserted {Studentterms.Length} new degrees.");

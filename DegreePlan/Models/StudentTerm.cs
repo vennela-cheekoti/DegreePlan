@@ -11,9 +11,8 @@ namespace DegreePlan.Models
         public int Term { get; set; }
         public string TermAbv { get; set; }
         public string TermName { get; set; }
-        public int StudentId { get; set; }
         public int DegreeplanId { get; set; }
-        public Student Student { get; set; }
-        public Degreeplan Degreeplan { get; set; }
+        public Degreeplan DegreePlan{get; set;}
+        
     }
 }
