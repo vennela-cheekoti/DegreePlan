@@ -179,19 +179,19 @@ namespace DegreePlan.Data
             {
                 var Slots = new Slot[]
                 {
-                    new Slot{ SlotId = 1, DegreePlan = 7255,  Term = 1, CreditId = 356,Status="C"},
-                    new Slot{ SlotId = 2, DegreePlan = 7255,  Term = 1, CreditId = 542,Status="C"},
-                    new Slot{ SlotId = 3, DegreePlan = 7255,  Term = 1, CreditId = 563,Status="C"},
-                    new Slot{ SlotId = 4, DegreePlan = 7255,  Term = 1, CreditId = 460,Status="C"},
-                    new Slot{ SlotId = 5, DegreePlan = 7255,  Term = 2, CreditId = 560,Status="A"},
-                    new Slot{ SlotId = 6, DegreePlan = 7255,  Term = 2, CreditId = 664,Status="A"},
-                    new Slot{ SlotId = 7, DegreePlan = 7255,  Term = 2, CreditId = 64,Status="A"},
-                    new Slot{ SlotId = 8, DegreePlan = 7255,  Term = 3, CreditId = 618,Status="P"},
-                    new Slot{ SlotId = 9, DegreePlan = 7255,  Term = 3, CreditId = 691,Status="P"},
-                    new Slot{ SlotId = 10, DegreePlan = 7255,  Term = 4, CreditId = 10,Status="P"},
-                    new Slot{ SlotId = 11, DegreePlan = 7255,  Term = 4, CreditId = 555,Status="P"},
-                    new Slot{ SlotId = 12, DegreePlan = 7255,  Term = 5, CreditId = 20,Status="P"},
-                    new Slot{ SlotId = 13, DegreePlan = 7255,  Term = 5, CreditId = 692,Status="P"},
+                    new Slot{ SlotId = 1, DegreePlanId = 7255,  Term = 1, CreditId = 356,Status="C"},
+                    new Slot{ SlotId = 2, DegreePlanId = 7255,  Term = 1, CreditId = 542,Status="C"},
+                    new Slot{ SlotId = 3, DegreePlanId = 7255,  Term = 1, CreditId = 563,Status="C"},
+                    new Slot{ SlotId = 4, DegreePlanId = 7255,  Term = 1, CreditId = 460,Status="C"},
+                    new Slot{ SlotId = 5, DegreePlanId = 7255,  Term = 2, CreditId = 560,Status="A"},
+                    new Slot{ SlotId = 6, DegreePlanId = 7255,  Term = 2, CreditId = 664,Status="A"},
+                    new Slot{ SlotId = 7, DegreePlanId = 7255,  Term = 2, CreditId = 64,Status="A"},
+                    new Slot{ SlotId = 8, DegreePlanId = 7255,  Term = 3, CreditId = 618,Status="P"},
+                    new Slot{ SlotId = 9, DegreePlanId = 7255,  Term = 3, CreditId = 691,Status="P"},
+                    new Slot{ SlotId = 10, DegreePlanId = 7255,  Term = 4, CreditId = 10,Status="P"},
+                    new Slot{ SlotId = 11, DegreePlanId = 7255,  Term = 4, CreditId = 555,Status="P"},
+                    new Slot{ SlotId = 12, DegreePlanId = 7255,  Term = 5, CreditId = 20,Status="P"},
+                    new Slot{ SlotId = 13, DegreePlanId = 7255,  Term = 5, CreditId = 692,Status="P"},
 
 
                 };

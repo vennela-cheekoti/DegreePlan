@@ -9,8 +9,10 @@ namespace DegreePlan.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SlotId { get; set; }
         public string Status { get; set; }
-        public int DegreePlan { get; set; }
+        [ForeignKey("DegreePlanId")]
+        public int DegreePlanId { get; set; }
         public int Term { get; set; }
+        [ForeignKey("CreditId")]
         public int CreditId { get; set; }
 
        
