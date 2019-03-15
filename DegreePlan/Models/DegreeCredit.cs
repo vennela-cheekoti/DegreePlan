@@ -13,19 +13,10 @@ namespace DegreePlan.Models
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DegreeCreditId { get; set; }
-
-        [ForeignKey("DegreeId")]
         public int DegreeId { get; set; }
-        [ForeignKey("DegreeId")]
         public int CreditId { get; set; }
         public Degree Degree { get; set; }
         public Credit Credit { get; set; }
-        
-         
-
-
-
-
 
     }
 
