@@ -63,6 +63,10 @@ namespace DegreePlan.Migrations
 
                     b.HasKey("DegreeCreditId");
 
+                    b.HasIndex("CreditId");
+
+                    b.HasIndex("DegreeId");
+
                     b.ToTable("DegreeCredit");
                 });
 
@@ -89,7 +93,7 @@ namespace DegreePlan.Migrations
 
                     b.Property<int>("CreditId");
 
-                    b.Property<int>("DegreePlan");
+                    b.Property<int>("DegreePlanId");
 
                     b.Property<string>("Status");
 
@@ -299,6 +303,19 @@ namespace DegreePlan.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("DegreePlan.Models.DegreeCredit", b =>
+                {
+                    b.HasOne("DegreePlan.Models.Credit", "Credit")
+                        .WithMany()
+                        .HasForeignKey("CreditId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("DegreePlan.Models.Degree", "Degree")
+                        .WithMany()
+                        .HasForeignKey("DegreeId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

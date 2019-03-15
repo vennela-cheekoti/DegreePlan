@@ -22,7 +22,8 @@ namespace DegreePlan.Controllers
         // GET: DegreeCredits
         public async Task<IActionResult> Index()
         {
-            return View(await _context.DegreeCredits.ToListAsync());
+            var applicationDbContext = _context.DegreeCredits.Include(d => d.Credit).Include(d => d.Degree);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: DegreeCredits/Details/5
@@ -34,6 +35,8 @@ namespace DegreePlan.Controllers
             }
 
             var degreeCredit = await _context.DegreeCredits
+                .Include(d => d.Credit)
+                .Include(d => d.Degree)
                 .FirstOrDefaultAsync(m => m.DegreeCreditId == id);
             if (degreeCredit == null)
             {
@@ -46,6 +49,8 @@ namespace DegreePlan.Controllers
         // GET: DegreeCredits/Create
         public IActionResult Create()
         {
+            ViewData["CreditId"] = new SelectList(_context.Credits, "CreditId", "CreditId");
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId");
             return View();
         }
 
@@ -62,6 +67,8 @@ namespace DegreePlan.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CreditId"] = new SelectList(_context.Credits, "CreditId", "CreditId", degreeCredit.CreditId);
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId", degreeCredit.DegreeId);
             return View(degreeCredit);
         }
 
@@ -78,6 +85,8 @@ namespace DegreePlan.Controllers
             {
                 return NotFound();
             }
+            ViewData["CreditId"] = new SelectList(_context.Credits, "CreditId", "CreditId", degreeCredit.CreditId);
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId", degreeCredit.DegreeId);
             return View(degreeCredit);
         }
 
@@ -113,6 +122,8 @@ namespace DegreePlan.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CreditId"] = new SelectList(_context.Credits, "CreditId", "CreditId", degreeCredit.CreditId);
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId", degreeCredit.DegreeId);
             return View(degreeCredit);
         }
 
@@ -125,6 +136,8 @@ namespace DegreePlan.Controllers
             }
 
             var degreeCredit = await _context.DegreeCredits
+                .Include(d => d.Credit)
+                .Include(d => d.Degree)
                 .FirstOrDefaultAsync(m => m.DegreeCreditId == id);
             if (degreeCredit == null)
             {

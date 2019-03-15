@@ -18,6 +18,8 @@ namespace DegreePlan.Models
         public int DegreeId { get; set; }
         [ForeignKey("DegreeId")]
         public int CreditId { get; set; }
+        public Degree Degree { get; set; }
+        public Credit Credit { get; set; }
         
          
 
