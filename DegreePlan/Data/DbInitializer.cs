@@ -20,10 +20,10 @@ namespace DegreePlan.Data
             {
                 var degrees = new Degree[]
                 {
-                     new Degree{DegreeId = 1 , DegreeAbv = "ACS+2" , DegreeName = "MS ACS +2"},
-                     new Degree{DegreeId = 2 , DegreeAbv = "ACS+DB" , DegreeName = "MS ACS+ DB"},
-                     new Degree{DegreeId = 3 , DegreeAbv = "ACS+NF" , DegreeName = "MS ACS + NF"},
-                     new Degree{DegreeId = 4 , DegreeAbv = "ACS" , DegreeName = "MS ACS"},
+                     new Degree{DegreeId = 1 , DegreeAbv = "ACS+2" , DegreeName = "MS ACS +2" , NumberOfTerms=6},
+                     new Degree{DegreeId = 2 , DegreeAbv = "ACS+DB" , DegreeName = "MS ACS+ DB" , NumberOfTerms=6},
+                     new Degree{DegreeId = 3 , DegreeAbv = "ACS+NF" , DegreeName = "MS ACS + NF" , NumberOfTerms=6},
+                     new Degree{DegreeId = 4 , DegreeAbv = "ACS" , DegreeName = "MS ACS" , NumberOfTerms=6},
                 };
                 Console.WriteLine($"Inserted {degrees.Length} new degrees.");
                 foreach (Degree d in degrees)
