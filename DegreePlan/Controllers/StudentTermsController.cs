@@ -20,10 +20,41 @@ namespace DegreePlan.Controllers
         }
 
         // GET: StudentTerms
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            var applicationDbContext = _context.StudentTerms.Include(s => s.DegreePlan);
-            return View(await applicationDbContext.ToListAsync());
+            ViewData["DegreeSortParm"] =  String.IsNullOrEmpty(sortOrder) ? "degree_desc" : "";
+            ViewData["TermsSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Terms_desc" : ""; 
+            ViewData["TermSortParm"] = sortOrder == "Term" ? "term_desc" : "Term";
+            ViewData["CurrentFilter"] = searchString;
+            var studentTerms = from s in _context.StudentTerms
+                               select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                studentTerms = studentTerms.Where(s => s.Term.ToString().Contains(searchString)
+                                 || s.TermAbv.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "degree_desc":
+                    studentTerms = studentTerms.OrderByDescending(s => s.DegreeplanId);
+                    break;
+                case "Terms_desc":
+                    studentTerms = studentTerms.OrderByDescending(s => s.TermAbv);
+                    break;
+                case "Term":
+                    studentTerms = studentTerms.OrderBy(s => s.Term);
+                    break;
+
+                case "term_desc":
+                    studentTerms = studentTerms.OrderByDescending(s => s.Term);
+                    break;
+                default:
+                    studentTerms = studentTerms.OrderBy(s => s.StudentTermId);
+                    break;
+            }
+            //var applicationDbContext = _context.StudentTerms.Include(s => s.StudentTermId).Include(s => s.DegreePlan);
+            //return View(await applicationDbContext.ToListAsync());
+            return View(await studentTerms.AsNoTracking().ToListAsync());
         }
 
         // GET: StudentTerms/Details/5
