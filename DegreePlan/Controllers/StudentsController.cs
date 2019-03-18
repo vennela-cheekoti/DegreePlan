@@ -25,19 +25,19 @@ namespace DegreePlan.Controllers
             ViewData["FamilyNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Fname_desc" : "";
             ViewData["GivenNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Gname_desc" : "";
             ViewData["SidSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Sid_desc" : "";
-            ViewData["CatpawsidSortParm"] = sortOrder == "Catpawsids" ? "Catpawsid_desc" : "Catpawsid";
+            ViewData["CatpawsidSortParm"] = sortOrder == "Catpawsid" ? "Catpawsid_desc" : "Catpawsid";
             ViewData["CurrentFilter"] = searchString;
             var students = from s in _context.Students
                           select s;
             if (!String.IsNullOrEmpty(searchString))
             {
                 students = students.Where(s => s.FamilyName.Contains(searchString)
-                                       || s.GivenName.Contains(searchString)||s.SID.Contains(searchString));
+                                       || s.GivenName.Contains(searchString)||s.SID.Contains(searchString)||s.CatPawsID.ToString().Contains(searchString));
             }
             switch (sortOrder)
             {
                 case "Fname_desc":
-                    students = students.OrderByDescending(s => s.FamilyName);
+                    students = students.OrderBy(s => s.FamilyName);
                     break;
                 case "Gname_desc":
                     students = students.OrderBy(s => s.GivenName);
@@ -47,6 +47,9 @@ namespace DegreePlan.Controllers
                     break;
                 case "Catpawsid_desc":
                     students = students.OrderByDescending(s => s.CatPawsID);
+                    break;
+                case "Catpawsid":
+                    students = students.OrderBy(s => s.CatPawsID);
                     break;
                 default:
                     students = students.OrderBy(s => s.StudentId);
