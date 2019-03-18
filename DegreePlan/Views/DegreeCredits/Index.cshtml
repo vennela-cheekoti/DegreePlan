@@ -9,14 +9,23 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Degree Id or Credit Id: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-action="Index">Back to Full List</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Degree)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DegreeIdParm"]">@Html.DisplayNameFor(model => model.DegreeId)</a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Credit)
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["RequirementIdParm"]">@Html.DisplayNameFor(model => model.CreditId)</a>
             </th>
             <th></th>
         </tr>
@@ -25,10 +34,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Degree.DegreeId)
+                @Html.DisplayFor(modelItem => item.DegreeId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Credit.CreditId)
+                @Html.DisplayFor(modelItem => item.CreditId)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.DegreeCreditId">Edit</a> |
