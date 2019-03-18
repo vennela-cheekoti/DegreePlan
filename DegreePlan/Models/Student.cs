@@ -12,5 +12,6 @@ namespace DegreePlan.Models
         public string GivenName { get; set; }
         public String SID { get; set; }
         public int CatPawsID { get; set; }
+
     }
 }
