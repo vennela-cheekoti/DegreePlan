@@ -8,4 +8,5 @@ Vennela Cheekoti
 |         | $30/hr    | 3.0        | 90           | 6hrs/wk *4wks * 3 members | 6480        |
 
 
-
+issue link for beta:
+https://github.com/vennela-cheekoti/Degreeplan/issues/7
