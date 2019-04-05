@@ -50,6 +50,7 @@ namespace DegreePlan.Controllers
             }
             return View(await degrees.AsNoTracking().ToListAsync());
         }
+        //public async Task<IActionResult> Create([Bind("ID,Description,CreatedDate,Done")] Todo todo)
 
         // GET: Degrees/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -80,7 +81,7 @@ namespace DegreePlan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DegreeId,DegreeAbv,DegreeName,NumberOfTerms")] Degree degree)
+        public async Task<IActionResult> Create([Bind("DegreeId,DegreeAbv,DegreeName,NumberOfTerms,Done")] Degree degree)
         {
             if (ModelState.IsValid)
             {

@@ -13,5 +13,6 @@ namespace DegreePlan.Models
         public int IsSummer { get; set; }
         public int IsSpring { get; set; }
         public int IsFall { get; set; }
+        public bool Done { get; set; }
     }
 }

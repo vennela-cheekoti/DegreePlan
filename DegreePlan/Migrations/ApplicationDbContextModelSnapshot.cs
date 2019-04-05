@@ -27,6 +27,8 @@ namespace DegreePlan.Migrations
 
                     b.Property<string>("CreditName");
 
+                    b.Property<bool>("Done");
+
                     b.Property<int>("IsFall");
 
                     b.Property<int>("IsSpring");
@@ -45,6 +47,8 @@ namespace DegreePlan.Migrations
                     b.Property<string>("DegreeAbv");
 
                     b.Property<string>("DegreeName");
+
+                    b.Property<bool>("Done");
 
                     b.Property<int>("NumberOfTerms");
 

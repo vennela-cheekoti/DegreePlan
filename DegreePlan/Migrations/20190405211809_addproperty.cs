@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DegreePlan.Migrations
 {
-    public partial class initdb : Migration
+    public partial class addproperty : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -56,7 +56,8 @@ namespace DegreePlan.Migrations
                     CreditName = table.Column<string>(nullable: true),
                     IsSummer = table.Column<int>(nullable: false),
                     IsSpring = table.Column<int>(nullable: false),
-                    IsFall = table.Column<int>(nullable: false)
+                    IsFall = table.Column<int>(nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -70,7 +71,8 @@ namespace DegreePlan.Migrations
                     DegreeId = table.Column<int>(nullable: false),
                     DegreeAbv = table.Column<string>(nullable: true),
                     DegreeName = table.Column<string>(nullable: true),
-                    NumberOfTerms = table.Column<int>(nullable: false)
+                    NumberOfTerms = table.Column<int>(nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {

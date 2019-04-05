@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DegreePlan.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190317015316_initdb")]
-    partial class initdb
+    [Migration("20190405211809_addproperty")]
+    partial class addproperty
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,6 +28,8 @@ namespace DegreePlan.Migrations
                     b.Property<string>("CreditAbv");
 
                     b.Property<string>("CreditName");
+
+                    b.Property<bool>("Done");
 
                     b.Property<int>("IsFall");
 
@@ -47,6 +49,8 @@ namespace DegreePlan.Migrations
                     b.Property<string>("DegreeAbv");
 
                     b.Property<string>("DegreeName");
+
+                    b.Property<bool>("Done");
 
                     b.Property<int>("NumberOfTerms");
 

@@ -76,7 +76,7 @@ namespace DegreePlan.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CreditId,CreditAbv,CreditName,IsSummer,IsSpring,IsFall")] Credit credit)
+        public async Task<IActionResult> Create([Bind("CreditId,CreditAbv,CreditName,IsSummer,IsSpring,IsFall,Done")] Credit credit)
         {
             if (ModelState.IsValid)
             {

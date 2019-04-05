@@ -11,6 +11,7 @@ namespace DegreePlan.Models
         public string DegreeAbv { get; set; }
         public string DegreeName { get; set; }
         public int NumberOfTerms { get; set; }
+        public bool Done { get; set; }
 
     }
 }
