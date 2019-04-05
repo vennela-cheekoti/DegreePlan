@@ -122,6 +122,8 @@ namespace DegreePlan.Migrations
 
                     b.Property<int>("CatPawsID");
 
+                    b.Property<bool>("Done");
+
                     b.Property<string>("FamilyName");
 
                     b.Property<string>("GivenName");

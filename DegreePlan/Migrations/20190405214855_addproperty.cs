@@ -87,7 +87,8 @@ namespace DegreePlan.Migrations
                     FamilyName = table.Column<string>(nullable: true),
                     GivenName = table.Column<string>(nullable: true),
                     SID = table.Column<string>(nullable: true),
-                    CatPawsID = table.Column<int>(nullable: false)
+                    CatPawsID = table.Column<int>(nullable: false),
+                    Done = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {

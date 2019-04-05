@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DegreePlan.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190405211809_addproperty")]
+    [Migration("20190405214855_addproperty")]
     partial class addproperty
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -123,6 +123,8 @@ namespace DegreePlan.Migrations
                     b.Property<int>("StudentId");
 
                     b.Property<int>("CatPawsID");
+
+                    b.Property<bool>("Done");
 
                     b.Property<string>("FamilyName");
 
