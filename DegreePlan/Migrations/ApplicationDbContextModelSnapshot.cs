@@ -23,9 +23,11 @@ namespace DegreePlan.Migrations
                 {
                     b.Property<int>("CreditId");
 
-                    b.Property<string>("CreditAbv");
+                    b.Property<string>("CreditAbv")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("CreditName");
+                    b.Property<string>("CreditName")
+                        .HasMaxLength(50);
 
                     b.Property<bool>("Done");
 
@@ -44,9 +46,11 @@ namespace DegreePlan.Migrations
                 {
                     b.Property<int>("DegreeId");
 
-                    b.Property<string>("DegreeAbv");
+                    b.Property<string>("DegreeAbv")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("DegreeName");
+                    b.Property<string>("DegreeName")
+                        .HasMaxLength(50);
 
                     b.Property<bool>("Done");
 
@@ -80,9 +84,11 @@ namespace DegreePlan.Migrations
 
                     b.Property<int>("DegreeId");
 
-                    b.Property<string>("DegreePlanAbv");
+                    b.Property<string>("DegreePlanAbv")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("DegreePlanName");
+                    b.Property<string>("DegreePlanName")
+                        .HasMaxLength(50);
 
                     b.Property<int>("StudentId");
 
@@ -103,7 +109,8 @@ namespace DegreePlan.Migrations
 
                     b.Property<int>("DegreePlanId");
 
-                    b.Property<string>("Status");
+                    b.Property<string>("Status")
+                        .HasMaxLength(50);
 
                     b.Property<int>("Term");
 
@@ -124,11 +131,14 @@ namespace DegreePlan.Migrations
 
                     b.Property<bool>("Done");
 
-                    b.Property<string>("FamilyName");
+                    b.Property<string>("FamilyName")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("GivenName");
+                    b.Property<string>("GivenName")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("SID");
+                    b.Property<string>("SID")
+                        .HasMaxLength(50);
 
                     b.HasKey("StudentId");
 
@@ -143,9 +153,11 @@ namespace DegreePlan.Migrations
 
                     b.Property<int>("Term");
 
-                    b.Property<string>("TermAbv");
+                    b.Property<string>("TermAbv")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("TermName");
+                    b.Property<string>("TermName")
+                        .HasMaxLength(50);
 
                     b.HasKey("StudentTermId");
 

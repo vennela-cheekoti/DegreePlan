@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace DegreePlan.Models
 {
@@ -8,9 +9,13 @@ namespace DegreePlan.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StudentId { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public string FamilyName { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public string GivenName { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public String SID { get; set; }
+        [Range(0,20)]
         public int CatPawsID { get; set; }
         public bool Done { get; set; }
 

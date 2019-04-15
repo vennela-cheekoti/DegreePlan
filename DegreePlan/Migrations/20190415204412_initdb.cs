@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DegreePlan.Migrations
 {
-    public partial class addproperty : Migration
+    public partial class initdb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -52,8 +52,8 @@ namespace DegreePlan.Migrations
                 columns: table => new
                 {
                     CreditId = table.Column<int>(nullable: false),
-                    CreditAbv = table.Column<string>(nullable: true),
-                    CreditName = table.Column<string>(nullable: true),
+                    CreditAbv = table.Column<string>(maxLength: 50, nullable: true),
+                    CreditName = table.Column<string>(maxLength: 50, nullable: true),
                     IsSummer = table.Column<int>(nullable: false),
                     IsSpring = table.Column<int>(nullable: false),
                     IsFall = table.Column<int>(nullable: false),
@@ -69,8 +69,8 @@ namespace DegreePlan.Migrations
                 columns: table => new
                 {
                     DegreeId = table.Column<int>(nullable: false),
-                    DegreeAbv = table.Column<string>(nullable: true),
-                    DegreeName = table.Column<string>(nullable: true),
+                    DegreeAbv = table.Column<string>(maxLength: 50, nullable: true),
+                    DegreeName = table.Column<string>(maxLength: 50, nullable: true),
                     NumberOfTerms = table.Column<int>(nullable: false),
                     Done = table.Column<bool>(nullable: false)
                 },
@@ -84,9 +84,9 @@ namespace DegreePlan.Migrations
                 columns: table => new
                 {
                     StudentId = table.Column<int>(nullable: false),
-                    FamilyName = table.Column<string>(nullable: true),
-                    GivenName = table.Column<string>(nullable: true),
-                    SID = table.Column<string>(nullable: true),
+                    FamilyName = table.Column<string>(maxLength: 50, nullable: true),
+                    GivenName = table.Column<string>(maxLength: 50, nullable: true),
+                    SID = table.Column<string>(maxLength: 50, nullable: true),
                     CatPawsID = table.Column<int>(nullable: false),
                     Done = table.Column<bool>(nullable: false)
                 },
@@ -232,8 +232,8 @@ namespace DegreePlan.Migrations
                 {
                     DegreeplanId = table.Column<int>(nullable: false),
                     StudentId = table.Column<int>(nullable: false),
-                    DegreePlanAbv = table.Column<string>(nullable: true),
-                    DegreePlanName = table.Column<string>(nullable: true),
+                    DegreePlanAbv = table.Column<string>(maxLength: 50, nullable: true),
+                    DegreePlanName = table.Column<string>(maxLength: 50, nullable: true),
                     DegreeId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -258,7 +258,7 @@ namespace DegreePlan.Migrations
                 columns: table => new
                 {
                     SlotId = table.Column<int>(nullable: false),
-                    Status = table.Column<string>(nullable: true),
+                    Status = table.Column<string>(maxLength: 50, nullable: true),
                     DegreePlanId = table.Column<int>(nullable: false),
                     Term = table.Column<int>(nullable: false),
                     CreditId = table.Column<int>(nullable: false)
@@ -286,8 +286,8 @@ namespace DegreePlan.Migrations
                 {
                     StudentTermId = table.Column<int>(nullable: false),
                     Term = table.Column<int>(nullable: false),
-                    TermAbv = table.Column<string>(nullable: true),
-                    TermName = table.Column<string>(nullable: true),
+                    TermAbv = table.Column<string>(maxLength: 50, nullable: true),
+                    TermName = table.Column<string>(maxLength: 50, nullable: true),
                     DegreeplanId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
