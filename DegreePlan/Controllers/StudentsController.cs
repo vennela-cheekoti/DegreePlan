@@ -28,11 +28,11 @@ namespace DegreePlan.Controllers
             ViewData["CatpawsidSortParm"] = sortOrder == "Catpawsid" ? "Catpawsid_desc" : "Catpawsid";
             ViewData["CurrentFilter"] = searchString;
             var students = from s in _context.Students
-                          select s;
+                           select s;
             if (!String.IsNullOrEmpty(searchString))
             {
                 students = students.Where(s => s.FamilyName.Contains(searchString)
-                                       || s.GivenName.Contains(searchString)||s.SID.Contains(searchString)||s.CatPawsID.ToString().Contains(searchString));
+                                       || s.GivenName.Contains(searchString) || s.SID.Contains(searchString) || s.CatPawsID.ToString().Contains(searchString));
             }
             switch (sortOrder)
             {

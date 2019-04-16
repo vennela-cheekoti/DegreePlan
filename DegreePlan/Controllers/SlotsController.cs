@@ -27,11 +27,11 @@ namespace DegreePlan.Controllers
             ViewData["TermsSortParm"] = sortOrder == "Terms" ? "term_desc" : "Term";
             ViewData["CurrentFilter"] = searchString;
             var slots = from s in _context.Slots
-                          select s;
+                        select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-               slots = slots.Where(s => s.Term.ToString().Contains(searchString)
-                                || s.CreditId.ToString().Contains(searchString));
+                slots = slots.Where(s => s.Term.ToString().Contains(searchString)
+                                 || s.CreditId.ToString().Contains(searchString));
             }
             switch (sortOrder)
             {

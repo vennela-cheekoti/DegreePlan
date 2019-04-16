@@ -22,7 +22,7 @@ namespace DegreePlan.Controllers
         // GET: Degreeplans
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-           // var applicationDbContext = _context.DegreePlans.Include(d => d.Degree).Include(d => d.Student);
+            // var applicationDbContext = _context.DegreePlans.Include(d => d.Degree).Include(d => d.Student);
             ViewData["StudentidSortParm"] = sortOrder == "Studentid" ? "Studentid_desc" : "Studentid";
             ViewData["DegreePlanAbvSortParm"] = String.IsNullOrEmpty(sortOrder) ? "DegreeplanAbv_desc" : "";
             ViewData["DegreePlanNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "DegreePlanName_desc" : "";
@@ -33,7 +33,7 @@ namespace DegreePlan.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 degreeplans = degreeplans.Where(s => s.DegreePlanAbv.Contains(searchString)
-                                       || s.DegreePlanName.Contains(searchString)||s.StudentId.ToString().Contains(searchString)||s.DegreeId.ToString().Contains(searchString));
+                                       || s.DegreePlanName.Contains(searchString) || s.StudentId.ToString().Contains(searchString) || s.DegreeId.ToString().Contains(searchString));
             }
             switch (sortOrder)
             {

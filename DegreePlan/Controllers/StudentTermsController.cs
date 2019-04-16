@@ -22,8 +22,8 @@ namespace DegreePlan.Controllers
         // GET: StudentTerms
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            ViewData["DegreeSortParm"] =  String.IsNullOrEmpty(sortOrder) ? "degree_desc" : "";
-            ViewData["TermsSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Terms_desc" : ""; 
+            ViewData["DegreeSortParm"] = String.IsNullOrEmpty(sortOrder) ? "degree_desc" : "";
+            ViewData["TermsSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Terms_desc" : "";
             ViewData["TermSortParm"] = sortOrder == "Term" ? "term_desc" : "Term";
             ViewData["CurrentFilter"] = searchString;
             var studentTerms = from s in _context.StudentTerms

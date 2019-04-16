@@ -27,7 +27,7 @@ namespace DegreePlan.Controllers
             ViewData["TermsSortParm"] = sortOrder == "Terms" ? "term_desc" : "Term";
             ViewData["CurrentFilter"] = searchString;
             var degrees = from s in _context.Degrees
-                           select s;
+                          select s;
             if (!String.IsNullOrEmpty(searchString))
             {
                 degrees = degrees.Where(s => s.DegreeAbv.Contains(searchString)
