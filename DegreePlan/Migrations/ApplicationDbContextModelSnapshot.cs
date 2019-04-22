@@ -339,7 +339,7 @@ namespace DegreePlan.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DegreePlan.Models.Degree", "Degree")
-                        .WithMany()
+                        .WithMany("DegreeCredits")
                         .HasForeignKey("DegreeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -352,7 +352,7 @@ namespace DegreePlan.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DegreePlan.Models.Student", "Student")
-                        .WithMany()
+                        .WithMany("Degreeplans")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -365,7 +365,7 @@ namespace DegreePlan.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DegreePlan.Models.Degreeplan", "DegreePlan")
-                        .WithMany()
+                        .WithMany("Slots")
                         .HasForeignKey("DegreePlanId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

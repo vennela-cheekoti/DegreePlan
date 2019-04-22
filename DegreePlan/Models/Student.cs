@@ -19,5 +19,16 @@ namespace DegreePlan.Models
         public int CatPawsID { get; set; }
         public bool Done { get; set; }
 
+        public ICollection<Degreeplan> Degreeplans { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString() + ": " +
+              "StudentId = " + StudentId +
+              "GivenName = " + GivenName +
+              ", FamilyName = " + FamilyName +
+              "";
+        }
+
     }
 }

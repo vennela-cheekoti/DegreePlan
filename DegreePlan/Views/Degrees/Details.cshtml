@@ -9,30 +9,27 @@
 <div>
     <h4>Degree</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DegreeAbv)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DegreeAbv)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DegreeName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DegreeName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NumberOfTerms)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NumberOfTerms)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Done)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Done)
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.DegreeAbv) </dt>
+        <dd>@Html.DisplayFor(model => model.DegreeAbv) </dd>
+        <dt>@Html.DisplayNameFor(model => model.DegreeName) </dt>
+        <dd>@Html.DisplayFor(model => model.DegreeName)</dd>
+        <dt>@Html.DisplayNameFor(model => model.DegreeCredits)  </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Number</th>
+                    <th>DegereeId</th>
+                </tr>
+                @foreach (var item in Model.DegreeCredits.OrderBy(r => r.CreditId))
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.CreditId) </td>
+                        <td>@Html.DisplayFor(modelItem => item.DegreeId) </td>
+                       
+                    </tr>
+                }
+            </table>
         </dd>
     </dl>
 </div>

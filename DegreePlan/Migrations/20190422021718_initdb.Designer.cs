@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DegreePlan.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190415204412_initdb")]
+    [Migration("20190422021718_initdb")]
     partial class initdb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -341,7 +341,7 @@ namespace DegreePlan.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DegreePlan.Models.Degree", "Degree")
-                        .WithMany()
+                        .WithMany("DegreeCredits")
                         .HasForeignKey("DegreeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -354,7 +354,7 @@ namespace DegreePlan.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DegreePlan.Models.Student", "Student")
-                        .WithMany()
+                        .WithMany("Degreeplans")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -367,7 +367,7 @@ namespace DegreePlan.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DegreePlan.Models.Degreeplan", "DegreePlan")
-                        .WithMany()
+                        .WithMany("Slots")
                         .HasForeignKey("DegreePlanId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

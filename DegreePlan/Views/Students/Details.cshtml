@@ -10,35 +10,63 @@
     <h4>Student</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FamilyName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FamilyName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.GivenName)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.GivenName)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.SID)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SID)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.CatPawsID)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CatPawsID)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Done)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Done)
+        </dd>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Degree</th>
+                    <th>Plan Number</th>
+                    <th>Plan Abbrev</th>
+                    <th>Plan Name</th>
+                </tr>
+                @foreach (var item in Model.Degreeplans.OrderBy(p => p.DegreeplanId))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DegreeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DegreeplanId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DegreePlanAbv)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DegreePlanName)
+                        </td>
+                       
+                    </tr>
+                }
+            </table>
         </dd>
     </dl>
 </div>
