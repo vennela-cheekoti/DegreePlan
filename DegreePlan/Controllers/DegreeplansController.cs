@@ -116,7 +116,12 @@ namespace DegreePlan.Controllers
                 return NotFound();
             }
 
-            var degreeplan = await _context.DegreePlans.FindAsync(id);
+            var degreeplan = await _context.DegreePlans
+                .Include(p => p.Degree).ThenInclude(pd => pd.Credits)
+                .Include(p => p.DegreeCredit)
+                .Include(p => p.Student)
+                .Include(p => p.StudentTerms).ThenInclude(pt => pt.Slots)
+                 .SingleOrDefaultAsync(m => m.DegreeplanId == id);
             if (degreeplan == null)
             {
                 return NotFound();

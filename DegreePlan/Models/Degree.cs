@@ -16,6 +16,7 @@ namespace DegreePlan.Models
         [Range(0,20)]
         public int NumberOfTerms { get; set; }
         public bool Done { get; set; }
+        public ICollection<Credit> Credits { get; set; }
         public ICollection<DegreeCredit> DegreeCredits { get; set; }
 
         public override string ToString()

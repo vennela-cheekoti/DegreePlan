@@ -20,5 +20,12 @@ namespace DegreePlan.Models
         [Range(0, 20)]
         public int IsFall { get; set; }
         public bool Done { get; set; }
+        public Degree Degree { get; set; }
+        public override string ToString()
+        {
+            return base.ToString() + ":" + "CreditId=" + CreditId + ",CreditAbbv=" + CreditAbv + ",CreditName=" + CreditName + ", Degree={" + Degree.ToString() + "}";
+
+            
+        }
     }
 }
