@@ -22,6 +22,15 @@ https://github.com/vennela-cheekoti/Degreeplan <br>
 Picute of group members<br>
 ![Capture](https://user-images.githubusercontent.com/42945790/56673316-a82d5880-667d-11e9-8fc3-a86feb7d8cb2.PNG)
 
+Credit :<br>
+![Screenshot (190)](https://user-images.githubusercontent.com/42945790/56674061-01e25280-667f-11e9-9b87-9d30cc68edf8.png)
+credit create new :<br>
+![Screenshot (191)](https://user-images.githubusercontent.com/42945790/56674167-2a6a4c80-667f-11e9-9785-0242fdb72927.png)
+Degree:<br>
+![Screenshot (192)](https://user-images.githubusercontent.com/42945790/56674238-45d55780-667f-11e9-8ac1-989c7c3df652.png)
+Degree create new :<br>
+![Screenshot (193)](https://user-images.githubusercontent.com/42945790/56674332-74ebc900-667f-11e9-9451-1ed377aa454f.png)
+
 
 <b>Cost Estimator</b>
 
