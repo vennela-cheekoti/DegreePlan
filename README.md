@@ -16,6 +16,11 @@ Link to the repo<br>
 https://github.com/vennela-cheekoti/Degreeplan <br>
 2)Use tortoise git to clone our repo.<br>
 
+How to run our application.<br>
+1)Got to the folder where the application is present and type dotnet run applicationname in powershell.<br>
+2)Open the solution .sln file and click on the run button in visual studio.<br>
+
+
 
 | Project | Take home | multiplier | billing rate | estimate hours            | Toatal cost |
 |---------|-----------|------------|--------------|---------------------------|-------------|
