@@ -19,7 +19,7 @@ https://github.com/vennela-cheekoti/Degreeplan <br>
 <b>How to run our application.</b><br>
 1)Got to the folder where the application is present and type dotnet run applicationname in powershell.<br>
 2)Open the solution .sln file and click on the run button in visual studio.<br>
-Picute of group members<br>
+<b>Picute of group members<b><br>
 ![Capture](https://user-images.githubusercontent.com/42945790/56673316-a82d5880-667d-11e9-8fc3-a86feb7d8cb2.PNG)
 
 Credit :<br>
@@ -32,6 +32,7 @@ Degree create new :<br>
 ![Screenshot (193)](https://user-images.githubusercontent.com/42945790/56674332-74ebc900-667f-11e9-9451-1ed377aa454f.png)
 Link to commits:<br>
 https://github.com/vennela-cheekoti/Degreeplan/commits/master
+
 
 
 <b>Cost Estimator</b>
