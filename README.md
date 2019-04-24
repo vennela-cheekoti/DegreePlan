@@ -42,5 +42,5 @@ https://github.com/vennela-cheekoti/Degreeplan/commits/master
 |         | $30/hr    | 3.0        | 90           | 6hrs/wk *4wks * 3 members | 6480        |
 
 
-issue link for beta:<br>
+<b>issue link for beta:<b><br>
 https://github.com/vennela-cheekoti/Degreeplan/issues/7
