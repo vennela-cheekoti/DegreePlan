@@ -33,7 +33,7 @@ Degree create new :<br>
 Link to commits:<br>
 https://github.com/vennela-cheekoti/Degreeplan/commits/master<br>
 Link to Azure:
-https://degreeplan1.azurewebsites.net
+https://degreeplan1.azurewebsites.net<br>
 
 
 
