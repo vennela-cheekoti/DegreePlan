@@ -29,7 +29,7 @@ namespace DegreePlan.Migrations
                     b.Property<string>("CreditName")
                         .HasMaxLength(50);
 
-                    b.Property<int?>("DegreeId");
+                    b.Property<int>("DegreeId");
 
                     b.Property<bool>("Done");
 
@@ -39,9 +39,13 @@ namespace DegreePlan.Migrations
 
                     b.Property<int>("IsSummer");
 
+                    b.Property<int?>("StudentTermId");
+
                     b.HasKey("CreditId");
 
                     b.HasIndex("DegreeId");
+
+                    b.HasIndex("StudentTermId");
 
                     b.ToTable("Credit");
                 });
@@ -86,8 +90,6 @@ namespace DegreePlan.Migrations
                 {
                     b.Property<int>("DegreeplanId");
 
-                    b.Property<int?>("DegreeCreditId");
-
                     b.Property<int>("DegreeId");
 
                     b.Property<string>("DegreePlanAbv")
@@ -99,8 +101,6 @@ namespace DegreePlan.Migrations
                     b.Property<int>("StudentId");
 
                     b.HasKey("DegreeplanId");
-
-                    b.HasIndex("DegreeCreditId");
 
                     b.HasIndex("DegreeId");
 
@@ -163,6 +163,8 @@ namespace DegreePlan.Migrations
 
                     b.Property<int>("DegreeplanId");
 
+                    b.Property<int?>("StudentId");
+
                     b.Property<int>("Term");
 
                     b.Property<string>("TermAbv")
@@ -174,6 +176,8 @@ namespace DegreePlan.Migrations
                     b.HasKey("StudentTermId");
 
                     b.HasIndex("DegreeplanId");
+
+                    b.HasIndex("StudentId");
 
                     b.ToTable("StudentTerm");
                 });
@@ -347,7 +351,12 @@ namespace DegreePlan.Migrations
                 {
                     b.HasOne("DegreePlan.Models.Degree", "Degree")
                         .WithMany("Credits")
-                        .HasForeignKey("DegreeId");
+                        .HasForeignKey("DegreeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("DegreePlan.Models.StudentTerm")
+                        .WithMany("Credits")
+                        .HasForeignKey("StudentTermId");
                 });
 
             modelBuilder.Entity("DegreePlan.Models.DegreeCredit", b =>
@@ -358,17 +367,13 @@ namespace DegreePlan.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DegreePlan.Models.Degree", "Degree")
-                        .WithMany("DegreeCredits")
+                        .WithMany()
                         .HasForeignKey("DegreeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("DegreePlan.Models.Degreeplan", b =>
                 {
-                    b.HasOne("DegreePlan.Models.DegreeCredit", "DegreeCredit")
-                        .WithMany()
-                        .HasForeignKey("DegreeCreditId");
-
                     b.HasOne("DegreePlan.Models.Degree", "Degree")
                         .WithMany()
                         .HasForeignKey("DegreeId")
@@ -388,7 +393,7 @@ namespace DegreePlan.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("DegreePlan.Models.Degreeplan", "DegreePlan")
-                        .WithMany()
+                        .WithMany("Slots")
                         .HasForeignKey("DegreePlanId")
                         .OnDelete(DeleteBehavior.Cascade);
 
@@ -403,6 +408,10 @@ namespace DegreePlan.Migrations
                         .WithMany("StudentTerms")
                         .HasForeignKey("DegreeplanId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("DegreePlan.Models.Student")
+                        .WithMany("StudentTerms")
+                        .HasForeignKey("StudentId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

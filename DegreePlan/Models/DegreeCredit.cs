@@ -18,17 +18,7 @@ namespace DegreePlan.Models
         public Degree Degree { get; set; }
         public Credit Credit { get; set; }
 
-        public override string ToString()
-        {
-            return base.ToString() + ": " +
-              "DegreeRequirementId = " + DegreeCreditId +
-              "DegreeId = " + DegreeId +
-              ", RequirementNumber = " + CreditId +
-              ", RequirementAbbrev = " + Credit.CreditAbv +
-              ", RequirementName = " + Credit.CreditName +
-              ", Degree = {" + Degree.ToString() +
-                           "}";
-        }
+     
 
     }
 

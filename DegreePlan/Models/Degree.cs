@@ -17,16 +17,8 @@ namespace DegreePlan.Models
         public int NumberOfTerms { get; set; }
         public bool Done { get; set; }
         public ICollection<Credit> Credits { get; set; }
-        public ICollection<DegreeCredit> DegreeCredits { get; set; }
+       // public ICollection<DegreeCredit> DegreeCredits { get; set; }
 
-        public override string ToString()
-        {
-            return base.ToString() + ": " +
-              "DegreeId = " + DegreeId +
-              ", DegreeAbbrev = " + DegreeAbv +
-              ", DegreeName = " + DegreeName +
-              "";
-        }
 
 
     }

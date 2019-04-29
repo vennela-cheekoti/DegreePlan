@@ -111,24 +111,17 @@ namespace DegreePlan.Controllers
         // GET: Degreeplans/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var degreeplan = await _context.DegreePlans
+            if (id == null) { return NotFound(); }
+            var studentDegreePlan = await _context.DegreePlans
                 .Include(p => p.Degree).ThenInclude(pd => pd.Credits)
-                .Include(p => p.DegreeCredit)
                 .Include(p => p.Student)
                 .Include(p => p.StudentTerms).ThenInclude(pt => pt.Slots)
-                 .SingleOrDefaultAsync(m => m.DegreeplanId == id);
-            if (degreeplan == null)
-            {
-                return NotFound();
-            }
-            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeId", degreeplan.DegreeId);
-            ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "StudentId", degreeplan.StudentId);
-            return View(degreeplan);
+                .SingleOrDefaultAsync(m => m.DegreeplanId == id);
+
+            if (studentDegreePlan == null) { return NotFound(); }
+            ViewData["DegreeId"] = new SelectList(_context.Degrees, "DegreeId", "DegreeAbv", studentDegreePlan.DegreeId);
+            ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "GivenName", studentDegreePlan.StudentId);
+            return View(studentDegreePlan);
         }
 
         // POST: Degreeplans/Edit/5

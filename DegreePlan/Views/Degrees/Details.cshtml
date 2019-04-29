@@ -14,20 +14,20 @@
         <dd>@Html.DisplayFor(model => model.DegreeAbv) </dd>
         <dt>@Html.DisplayNameFor(model => model.DegreeName) </dt>
         <dd>@Html.DisplayFor(model => model.DegreeName)</dd>
-        <dt>@Html.DisplayNameFor(model => model.DegreeCredits)  </dt>
+        <dt>@Html.DisplayNameFor(model => model.Credits)  </dt>
         <dd>
             <table class="table">
                 <tr>
                     <th>Number</th>
                     <th>DegereeId</th>
                 </tr>
-                @foreach (var item in Model.DegreeCredits.OrderBy(r => r.CreditId))
+                @foreach (var item in Model.Credits.OrderBy(r => r.CreditId))
                 {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => item.CreditId) </td>
-                        <td>@Html.DisplayFor(modelItem => item.DegreeId) </td>
-                       
-                    </tr>
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.CreditId) </td>
+                    @* <td>@Html.DisplayFor(modelItem => item.DegreeId) </td>*@
+                    <td>@Html.DisplayFor(modelItem => item.CreditId) </td>
+                </tr>
                 }
             </table>
         </dd>

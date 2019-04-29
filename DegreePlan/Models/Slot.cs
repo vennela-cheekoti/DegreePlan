@@ -17,10 +17,5 @@ namespace DegreePlan.Models
         public Degreeplan DegreePlan { get; set; }
         public Credit Credit { get; set; }
 
-        public override string ToString()
-        {
-            return base.ToString() + " PlanNumber = " + SlotId + "DegreeStatus =" + Status;
-        }
-
     }
 }

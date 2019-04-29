@@ -8,9 +8,10 @@
 
 <!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
 <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-<h1>Edit</h1>
 
-<h4>Degreeplan</h4>
+<h2>Edit</h2>
+
+<h4>StudentDegreePlan</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -23,6 +24,16 @@
                 <span asp-validation-for="StudentId" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="DegreeId" class="control-label"></label>
+                <select asp-for="DegreeId" class="form-control" asp-items="ViewBag.DegreeId"></select>
+                <span asp-validation-for="DegreeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DegreeplanId" class="control-label"></label>
+                <input asp-for="DegreeplanId" class="form-control" />
+                <span asp-validation-for="DegreeplanId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="DegreePlanAbv" class="control-label"></label>
                 <input asp-for="DegreePlanAbv" class="form-control" />
                 <span asp-validation-for="DegreePlanAbv" class="text-danger"></span>
@@ -32,13 +43,10 @@
                 <input asp-for="DegreePlanName" class="form-control" />
                 <span asp-validation-for="DegreePlanName" class="text-danger"></span>
             </div>
+
+    
             <div class="form-group">
-                <label asp-for="DegreeId" class="control-label"></label>
-                <select asp-for="DegreeId" class="form-control" asp-items="ViewBag.DegreeId"></select>
-                <span asp-validation-for="DegreeId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </form>
     </div>
@@ -60,7 +68,7 @@
                         }
                     }
 
-                    @foreach (var r in Model.Degree.Credits.Except(plannedList).OrderBy(dr => dr.CreditId))
+                    @foreach (var r in Model.Degree.Credits.OrderBy(dr => dr.CreditId))
                     {
                         <p class="list-group-item">@(r.CreditAbv + " (" + r.CreditId + ")")</p>
                     }
@@ -71,7 +79,7 @@
                 @foreach (var t in Model.StudentTerms.OrderBy(pt => pt.StudentTermId))
                 {
                     <article id="@("term" + t.StudentTermId.ToString())" class="list-group col" style="background-color: azure">
-                        <h2>@(t.TermAbv + " (" + t.StudentTermId + ")")</h2>
+                        <h2>@(t.TermName + " (" + t.StudentTermId + ")")</h2>
 
                         @foreach (var tr in t.Slots)
                         {
@@ -83,96 +91,84 @@
             </div>
         </div>
     </div>
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
-    <script>
-
-        const reqElement = document.getElementById('req')
-
-        const t1Element = document.getElementById('term1')
-        const t2Element = document.getElementById('term2')
-        const t3Element = document.getElementById('term3')
-        const t4Element = document.getElementById('term4')
-        const t5Element = document.getElementById('term5')
-        const t6Element = document.getElementById('term6')
-
-        new Sortable(reqElement, {
-            group: {
-                name: 'shared'
-            },
-            animation: 150,
-            fallbackOnBody: true,
-            swapThreshold: 0.65,
-            ghostClass: 'blue-background-class'
-        });
-
-        new Sortable(t1Element, {
-            group: {
-                name: 'shared'
-            },
-            animation: 150,
-            fallbackOnBody: true,
-            swapThreshold: 0.65,
-            ghostClass: 'blue-background-class'
-        });
-
-        new Sortable(t2Element, {
-            group: {
-                name: 'shared'
-            },
-            animation: 150,
-            fallbackOnBody: true,
-            swapThreshold: 0.65,
-            ghostClass: 'blue-background-class'
-        });
-
-        new Sortable(t3Element, {
-            group: {
-                name: 'shared'
-            },
-            animation: 150,
-            fallbackOnBody: true,
-            swapThreshold: 0.65,
-            ghostClass: 'blue-background-class'
-        });
-
-        new Sortable(t4Element, {
-            group: {
-                name: 'shared'
-            },
-            animation: 150,
-            fallbackOnBody: true,
-            swapThreshold: 0.65,
-            ghostClass: 'blue-background-class'
-        });
-
-        new Sortable(t5Element, {
-            group: {
-                name: 'shared'
-            },
-            animation: 150,
-            fallbackOnBody: true,
-            swapThreshold: 0.65,
-            ghostClass: 'blue-background-class'
-        });
-
-        new Sortable(t6Element, {
-            group: {
-                name: 'shared'
-            },
-            animation: 150,
-            fallbackOnBody: true,
-            swapThreshold: 0.65,
-            ghostClass: 'blue-background-class'
-        });
-
-    </script>
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
 </div>
 
+<script>
+    const reqElement = document.getElementById('req')
+    const t1Element = document.getElementById('term1')
+    const t2Element = document.getElementById('term2')
+    const t3Element = document.getElementById('term3')
+    const t4Element = document.getElementById('term4')
+    const t5Element = document.getElementById('term5')
+    const t6Element = document.getElementById('term6')
+    new Sortable(reqElement, {
+        group: {
+            name: 'shared'
+        },
+        animation: 150,
+        fallbackOnBody: true,
+        swapThreshold: 0.65,
+        ghostClass: 'blue-background-class'
+    });
+    new Sortable(t1Element, {
+        group: {
+            name: 'shared'
+        },
+        animation: 150,
+        fallbackOnBody: true,
+        swapThreshold: 0.65,
+        ghostClass: 'blue-background-class'
+    });
+    new Sortable(t2Element, {
+        group: {
+            name: 'shared'
+        },
+        animation: 150,
+        fallbackOnBody: true,
+        swapThreshold: 0.65,
+        ghostClass: 'blue-background-class'
+    });
+    new Sortable(t3Element, {
+        group: {
+            name: 'shared'
+        },
+        animation: 150,
+        fallbackOnBody: true,
+        swapThreshold: 0.65,
+        ghostClass: 'blue-background-class'
+    });
+    new Sortable(t4Element, {
+        group: {
+            name: 'shared'
+        },
+        animation: 150,
+        fallbackOnBody: true,
+        swapThreshold: 0.65,
+        ghostClass: 'blue-background-class'
+    });
+    new Sortable(t5Element, {
+        group: {
+            name: 'shared'
+        },
+        animation: 150,
+        fallbackOnBody: true,
+        swapThreshold: 0.65,
+        ghostClass: 'blue-background-class'
+    });
+    new Sortable(t6Element, {
+        group: {
+            name: 'shared'
+        },
+        animation: 150,
+        fallbackOnBody: true,
+        swapThreshold: 0.65,
+        ghostClass: 'blue-background-class'
+    });
+</script>
 
-
-
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

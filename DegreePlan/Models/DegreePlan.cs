@@ -22,22 +22,12 @@ namespace DegreePlan.Models
                         public int DegreeId { get; set; }
                         public Student Student { get; set; }
                         public Degree Degree { get; set; }
-                        public DegreeCredit DegreeCredit { get; set; }
+                       // public DegreeCredit DegreeCredit { get; set; }
 
        public ICollection<StudentTerm> StudentTerms { get; set; }
+        public ICollection<Slot> Slots { get; set; }
 
-        public override string ToString()
-        {
-            return base.ToString() + ": " +
-              "StudentDegreePlanId = " + DegreeplanId +
-              "StudentId = " + StudentId +
-              ", DegreeId = " + DegreeId +
-              ", PlanAbbrev = " + DegreePlanAbv +
-              ", PlanName = " + DegreePlanName +
-              ", Student ={" + Student.ToString() +
-                            "}, Degree = {" + Degree.ToString() +
-                           "}";
-        }
+
 
     }
 

@@ -20,15 +20,8 @@ namespace DegreePlan.Models
         public bool Done { get; set; }
 
         public ICollection<Degreeplan> Degreeplans { get; set; }
+        public ICollection<StudentTerm> StudentTerms { get; set; }
 
-        public override string ToString()
-        {
-            return base.ToString() + ": " +
-              "StudentId = " + StudentId +
-              "GivenName = " + GivenName +
-              ", FamilyName = " + FamilyName +
-              "";
-        }
 
     }
 }

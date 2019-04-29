@@ -40,19 +40,19 @@ namespace DegreePlan.Data
             {
                 var credits = new Credit[]
                 {
-                     new Credit{ CreditId =460 , CreditAbv ="DB" , CreditName ="Database" , IsSummer =0, IsSpring =1 , IsFall =1},
-                     new Credit{ CreditId =356 , CreditAbv ="NF" , CreditName ="Network Fundamentals" , IsSummer =0, IsSpring =1 , IsFall =1},
-                     new Credit{ CreditId =542 , CreditAbv ="542" , CreditName ="OOP with java" , IsSummer =0, IsSpring =1 , IsFall =1},
-                     new Credit{ CreditId =563 , CreditAbv ="563" , CreditName ="Web apps" , IsSummer =0, IsSpring =1 , IsFall =1},
-                     new Credit{ CreditId =560 , CreditAbv ="560" , CreditName ="Advanced Database" , IsSummer =1, IsSpring =1 , IsFall =1},
-                     new Credit{ CreditId =664 , CreditAbv ="664-UX" , CreditName ="User Experience Design" , IsSummer =0, IsSpring =1 , IsFall =1},
-                     new Credit{ CreditId =618 , CreditAbv ="618-PM" , CreditName ="Project management" , IsSummer =1, IsSpring =0 , IsFall =0},
-                     new Credit{ CreditId =555 , CreditAbv ="555-NS" , CreditName ="Network Security" , IsSummer =0, IsSpring =1 , IsFall =1},
-                     new Credit{ CreditId =691 , CreditAbv ="691-GDP1" , CreditName ="GDP1" , IsSummer =1, IsSpring =1 , IsFall =1},
-                     new Credit{ CreditId =692 , CreditAbv ="692-GDP2" , CreditName ="GDP2" , IsSummer =0, IsSpring =1 , IsFall =1},
-                     new Credit{ CreditId =64 , CreditAbv ="Mobile" , CreditName ="643 or 644 mobile" , IsSummer =0, IsSpring =1 , IsFall =1},
-                     new Credit{ CreditId =10 , CreditAbv ="E1" , CreditName ="Elective1" , IsSummer =0, IsSpring =1 , IsFall =1},
-                     new Credit{ CreditId =20 , CreditAbv ="E2" , CreditName ="Elective2" , IsSummer =0, IsSpring =1 , IsFall =1},
+                     new Credit{ CreditId =460 ,DegreeId = 1, CreditAbv ="DB" , CreditName ="Database" , IsSummer =0, IsSpring =1 , IsFall =1},
+                     new Credit{ CreditId =356 ,DegreeId = 1, CreditAbv ="NF" , CreditName ="Network Fundamentals" , IsSummer =0, IsSpring =1 , IsFall =1},
+                     new Credit{ CreditId =542 ,DegreeId = 1, CreditAbv ="542" , CreditName ="OOP with java" , IsSummer =0, IsSpring =1 , IsFall =1},
+                     new Credit{ CreditId =563 ,DegreeId = 1, CreditAbv ="563" , CreditName ="Web apps" , IsSummer =0, IsSpring =1 , IsFall =1},
+                     new Credit{ CreditId =560 , DegreeId = 1,CreditAbv ="560" , CreditName ="Advanced Database" , IsSummer =1, IsSpring =1 , IsFall =1},
+                     new Credit{ CreditId =664 ,DegreeId = 1, CreditAbv ="664-UX" , CreditName ="User Experience Design" , IsSummer =0, IsSpring =1 , IsFall =1},
+                     new Credit{ CreditId =618 ,DegreeId = 1, CreditAbv ="618-PM" , CreditName ="Project management" , IsSummer =1, IsSpring =0 , IsFall =0},
+                     new Credit{ CreditId =555 ,DegreeId = 1, CreditAbv ="555-NS" , CreditName ="Network Security" , IsSummer =0, IsSpring =1 , IsFall =1},
+                     new Credit{ CreditId =691 , DegreeId = 1,CreditAbv ="691-GDP1" , CreditName ="GDP1" , IsSummer =1, IsSpring =1 , IsFall =1},
+                     new Credit{ CreditId =692 , DegreeId = 1,CreditAbv ="692-GDP2" , CreditName ="GDP2" , IsSummer =0, IsSpring =1 , IsFall =1},
+                     new Credit{ CreditId =64 , DegreeId = 1,CreditAbv ="Mobile" , CreditName ="643 or 644 mobile" , IsSummer =0, IsSpring =1 , IsFall =1},
+                     new Credit{ CreditId =10 , DegreeId = 1,CreditAbv ="E1" , CreditName ="Elective1" , IsSummer =0, IsSpring =1 , IsFall =1},
+                     new Credit{ CreditId =20 ,DegreeId = 1, CreditAbv ="E2" , CreditName ="Elective2" , IsSummer =0, IsSpring =1 , IsFall =1},
 
                 };
                 Console.WriteLine($"Inserted {credits.Length} new credits.");

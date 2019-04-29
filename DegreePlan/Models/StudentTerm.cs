@@ -18,10 +18,8 @@ namespace DegreePlan.Models
         public int DegreeplanId { get; set; }
         public Degreeplan DegreePlan{get; set;}
         public ICollection<Slot> Slots { get; set; }
-        public override string ToString()
-        {
-            return base.ToString()+":"+"StudentTermId ="+StudentTermId+"DegreePlanId="+DegreeplanId+",TermAbv="+TermAbv+",TermName"+TermName+",DegreePlan={"+DegreePlan.ToString();
-        }
+        public ICollection<Credit> Credits { get; set; }
+      
         
         
     }
